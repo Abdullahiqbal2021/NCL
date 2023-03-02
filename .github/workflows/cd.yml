@@ -23,7 +23,7 @@ jobs:
         run: npm ci 
 
       - name: Build React Application
-        run: npm build
+        run: npm run build
 
       - name: Start With PM2
         run: npx pm2 startOrReload "${{ github.workspace }}/.production/ecosystem.config.js" --only portal-${{ github.head_ref || github.ref_name }}
