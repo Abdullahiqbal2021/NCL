@@ -2,7 +2,7 @@
 
 const env = {
 	PM2_SERVE_PATH: 'build',
-	PM2_SERVE_PORT: 5000,
+	PM2_SERVE_PORT: 3000,
 	PM2_SERVE_SPA: 'true',
 	PM2_SERVE_HOMEPAGE: '/index.html',
 };
@@ -15,7 +15,7 @@ const config = {
 			script: 'serve',
 			env: {
 				...env,
-				PM2_SERVE_PORT: 5000,
+				PM2_SERVE_PORT: 3000,
 			},
 		},
 		{
@@ -23,7 +23,7 @@ const config = {
 			script: 'serve',
 			env: {
 				...env,
-				PM2_SERVE_PORT: 5001,
+				PM2_SERVE_PORT: 3001,
 			},
 		},
 		{
@@ -31,7 +31,7 @@ const config = {
 			script: 'serve',
 			env: {
 				...env,
-				PM2_SERVE_PORT: 5002,
+				PM2_SERVE_PORT: 3002,
 			},
 		},
 	],
