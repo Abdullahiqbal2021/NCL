@@ -4,7 +4,6 @@ import Shuffle from "./page/Shuffle";
 function App() {
   return (
     <div className="App">
-
       <Shuffle />
     </div>
   );
