@@ -48,7 +48,7 @@ export default function ScanningReport({ charts, LineCode }) {
         width: "50%",
         border: "1px solid black",
         minWidth: "370px",
-        overflow:'auto'
+        overflow: 'auto'
         // marginTop: "6px",
         // fontSize: `${fontSize}px`,
       }}
@@ -87,9 +87,7 @@ export default function ScanningReport({ charts, LineCode }) {
                 margin: "0px 0",
                 alignItems: "center",
                 padding: '4px 0',
-                height: "100%",
-                alignItems
-                  : "center"
+                height: "100%"
               }}
             >
               {charts.map((chart, index) => (
@@ -115,7 +113,7 @@ export default function ScanningReport({ charts, LineCode }) {
                   </Box>
                   <Box
                     sx={{
-                      width: `${(((chart.Production / maxValue) * 100) / 2)-3}%`,
+                      width: `${(((chart.Production / maxValue) * 100) / 2) - 3}%`,
                       background: `${(((chart.Production / maxValue) * 100) / 2) < 10 ? "red"
                         : ((chart.Production / maxValue) * 100) / 2 <
                           20

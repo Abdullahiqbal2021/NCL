@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getData } from "../apis/api";
 import ScanningReport from "../componentsR2/ScanningReport/ScanningReport";
 import BasicTable from "../componentsR2/Table/Table";
@@ -15,7 +15,7 @@ function Report2() {
     if (lineId) {
       fetchData();
     }
-    const interval = window.setInterval(() => {
+    window.setInterval(() => {
       fetchData();
       console.log("again fetching data of report 2");
     }, 120000);
