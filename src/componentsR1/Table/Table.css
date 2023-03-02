@@ -1,0 +1,41 @@
+.table {
+  min-height: calc(100vh - 114px);
+}
+.table tr th:nth-child(1) {
+  border-left: 0;
+  border-bottom: 0;
+}
+.table tbody tr td:nth-last-child(1) {
+  border-left: 0;
+}
+.table tr th:nth-last-child(1) {
+  border-right: 0;
+}
+
+.table tr th {
+  color: rgb(255, 165, 0) !important;
+}
+.table tr th:not(:nth-child(1)) {
+  border-top: 0;
+}
+.table tr th,
+.table tbody tr td {
+  font-size: 23px !important;
+  font-weight: bolder !important;
+  padding: 6px !important;
+}
+.table tbody tr td {
+  font-size: 26px !important;
+}
+
+@media screen and (min-width: 1920px) {
+  /* //For Projectors or Higher Resolution Screens (Full HD) */
+  .table tr th,
+  .table tbody tr td {
+    font-size: 30px !important;
+  }
+
+  .table tbody tr td {
+    font-size: 40px !important;
+  }
+}
