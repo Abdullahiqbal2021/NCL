@@ -1,0 +1,32 @@
+name: continuous deployment
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  setup:
+    runs-on: [self-hosted, '${{ github.head_ref || github.ref_name }}']
+    steps:
+      - name: Stop existing PM2 instance
+        run: pm2 delete portal-${{ github.head_ref || github.ref_name }}
+        continue-on-error: true
+
+  build_and_deploy:
+    needs: setup
+    runs-on: [self-hosted, '${{ github.head_ref || github.ref_name }}']
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm i --frozen-lockfile
+
+      - name: Build React Application
+        run: npm build
+
+      - name: Start With PM2
+        run: npx pm2 startOrReload "${{ github.workspace }}/.production/ecosystem.config.js" --only portal-${{ github.head_ref || github.ref_name }}
+
+      - name: Save PM2 State
+        run: npx pm2 save
