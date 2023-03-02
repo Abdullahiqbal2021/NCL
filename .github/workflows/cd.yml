@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: npm i --frozen-lockfile
+        run: npm ci 
 
       - name: Build React Application
         run: npm build
